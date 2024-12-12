@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Udaipur Hotelier</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/jobpostingc.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <h4 class="m-0 text-primary">Udaipur Hotelier</h4>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+					<a href="category.html" class="nav-item nav-link">Jobs</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+
+        </nav>
+        <!-- Navbar End -->
+	        
+		<div class="container">
+    <h1>Job Posting Form</h1>
+	<br>
+	<h5>Please Provide all Details to Verify & visible to all Candidate</h5>
+	<br>
+	<form id="jobForm">
+      <!-- Job Title -->
+      <label for="jobTitle">Job Title:</label>
+      <select id="jobTitle" name="jobTitle" required>
+        <option value="">Select Job Department</option>
+        <option value="fo">Front Office</option>
+        <option value="hk">House Keeping</option>
+        <option value="fnb">Food & beverage</option>
+        <option value="accounts">Accounts</option>
+		<option value="hr">Human Resource</option>
+		<option value="mt">Maintenance</option>
+		<option value="security">Security</option>
+		<option value="production">Production</option>
+		<option value="purchase">Purchase</option>
+      </select>
+
+      <!-- Job Category -->
+      <label for="jobCategory">Job Category:</label>
+      <select id="jobCategory" name="jobCategory" required>
+        <option value="">Select Job Designation</option>
+		<option value="manager">Manager</option>
+		<option value="assmanegr">Assistant Manager</option>
+		<option value="executive">Executive</option>
+		<option value="supervisor">Supervisor</option>
+        <option value="associate">Associate</option>
+        <option value="gsa">GSA</option>
+        <option value="chef">Chef</option>
+        <option value="dcdp">DCDP</option>
+		<option value="cdp">CDP</option>
+		<option value="indian">Indian comi's</option>
+		<option value="chinese">chinese commi's</option>
+		<option value="tandoor">Tandoor comi's</option>
+		<option value="chinese">chinese commi's</option>
+		<option value="captain">Caption</option>
+		<option value="steward">Steward</option>
+		<option value="cashier">Cashier</option>
+		<option value="kst">KST</option>
+		<option value="guard">Guard</option>
+		<option value="bouncer">Bouncer</option>
+		<option value="mtech">Multi Technician</option>
+		<option value="tech">Technician</option>
+		<option value="electrician">Electrician</option>
+		<option value="trainee">Trainee</option>	
+      </select>
+
+      <!-- Number of Openings -->
+      <label for="noOfOpenings">Number of Openings:</label>
+      <input type="number" id="noOfOpenings" name="noOfOpenings" min="1" required>
+
+      <!-- Job Type -->
+      <label for="jobType">Job Type:</label>
+      <select id="jobType" name="jobType" required>
+        <option value="fullTime">Full Time</option>
+        <option value="partTime">Part Time</option>
+      </select>
+
+      <!-- Work Location -->
+      <label for="workLocation">Work Location:</label>
+      <select id="workLocation" name="workLocation" required>
+        <option value="workFromHome">Work from Home</option>
+        <option value="workFromOffice">Work from Office</option>
+        <option value="fieldWork">Field Work</option>
+      </select>
+
+      <!-- Gender -->
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <!-- Minimum Qualification -->
+      <label for="qualification">Minimum Qualification Required:</label>
+      <select id="qualification" name="qualification" required>
+        <option value="any">Any</option>
+        <option value="10thPass">10th Pass</option>
+        <option value="12thPass">12th Pass</option>
+        <option value="diploma">Diploma</option>
+        <option value="graduate">Graduate</option>
+        <option value="postGraduate">Post Graduate</option>
+      </select>
+
+      <!-- Experience -->
+      <label for="experience">Required Experience:</label>
+      <input type="number" id="experience" name="min_experience" placeholder="Experience" required>
+	  
+      <!-- Fresher Checkbox 
+      <label>
+        <input type="checkbox" id="fresher" name="fresher">Fresher Can Apply
+      </label> -->
+
+      <!-- Salary Benefits -->
+      <label for="salaryBenefits">Salary Benefits:</label>
+      <select id="salaryBenefits" name="salaryBenefits" required>
+        <option value="fixed">Fixed</option>
+        <option value="fixedPlusIncentives">Fixed + Incentives</option>
+      </select>
+
+	  <!-- Job Skills -->
+      <label for="skills">Job Skills:</label>
+      <input type="text" id="skills" name="skills" placeholder="e.g., office, hotelier, ezee etc." required>
+      
+	   <!-- Job Specification -->
+      <label for="jobSpecification">Job Specification:</label>
+      <textarea id="jobSpecification" name="jobSpecification" placeholder="Job requirements..." rows="4" required></textarea>
+	  <!-- Working Days -->
+      <label for="workingDays">Working Days:</label>
+      <select id="workingDays" name="workingDays" required>
+        <option value="5">5 Days</option>
+        <option value="6">6 Days</option>
+        <option value="7">7 Days</option>
+      </select>
+	   <!-- Full Address -->
+      <label for="companyAddress">Company Address:</label>
+      <textarea id="companyAddress" name="companyAddress" rows="3" required></textarea>
+	  
+	  <!-- Job Time -->
+	  
+      <label for="jobTimeStart">Job Time:</label>
+      <input type="time" id="jobTimeStart" name="jobTimeStart" required>
+      <input type="time" id="jobTimeEnd" name="jobTimeEnd" required>
+	
+	<!-- Salary Details -->
+      <label for="salaryDetails">Salary (Per Month):</label>
+      <input type="number" id="salaryDetails" name="salaryDetails" min="1" placeholder="Min Salary" required>
+      <input type="number" id="salaryDetails" name="salaryDetails" min="1" placeholder="Max Salary" required>
+	  <div class="line"></div>
+	  <!-- Job Benefits -->
+	  <div class="jobbenfits">
+      <label for="jobBenefits">Job Benefits:</label>
+		<input type="checkbox" name="jobBenefits" value="meal">Meal
+        <input type="checkbox" name="jobBenefits" value="insurance"> Insurance
+        <input type="checkbox" name="jobBenefits" value="PF"> PF
+        <input type="checkbox" name="jobBenefits" value="ESI"> ESI
+        <input type="checkbox" name="jobBenefits" value="accommodation"> Accommodation
+     <div class="line"></div>
+      <!-- Documents Required -->
+      <label>Documents Required:</label>
+        <input type="checkbox" name="documents" value="panCard"> Pan Card
+        <input type="checkbox" name="documents" value="aadharCard"> Aadhar Card
+        <input type="checkbox" name="documents" value="resume"> Resume
+        <input type="checkbox" name="documents" value="bankDetails"> Bank Details
+		<input type="checkbox" name="documents" value="bankDetails"> Salary Proof
+    </div>
+
+
+     <div class="line"></div>
+<div class="deposit">
+      <!-- Deposit Requirement -->
+      <label for="depositRequired">Is Candidate Required to make any Deposit ( Eg. Uniform , Shoe, etc)</label>
+      <input type="checkbox" id="NotRequired" name="depositRequired"> No
+	  <input type="checkbox" id="depositRequired" name="depositRequired"> Yes, for uniform or other purposes
+</div>
+<div class="line"></div>
+      <!-- Submit Button -->
+      <button type="submit">Submit Job Posting</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+
+       
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
