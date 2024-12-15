@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Udaipur Hotelier</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+	<script>
+        // Function to show and hide sections based on experience type selection
+        function showFormSection() {
+            var experienceType = document.getElementById("experienceType").value;
+            document.getElementById("studentForm").style.display = "none";
+            document.getElementById("fresherForm").style.display = "none";
+            document.getElementById("experiencedForm").style.display = "none";
+			
+            if (experienceType === "student") {
+                document.getElementById("studentForm").style.display = "block";
+            } else if (experienceType === "fresher") {
+                document.getElementById("fresherForm").style.display = "block";
+            } else if (experienceType === "experienced") {
+                document.getElementById("experiencedForm").style.display = "block";
+            }
+        }
+
+        // Function to show file input based on conditions
+        function toggleResumeInput() {
+            var experienceType = document.getElementById("experienceType").value;
+            if (experienceType === "student" || experienceType === "fresher" || experienceType === "experienced") {
+                document.getElementById("resumeInput").style.display = "block";
+            }
+        }
+    </script>
+    <style>
+        .form-section {
+            display: grid;
+            margin-top: 20px;
+			
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+			width:100%;
+			
+        }
+		.form-container {
+            width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        button {
+		width: 100%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            align:center;
+        }
+		
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <h4 class="m-0 text-primary">Udaipur Hotelier</h4>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+					<a href="category.html" class="nav-item nav-link">Jobs</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+					<a href="Resume.html" class="nav-item nav-link none">Resume</a>
+				</div>
+			</div>
+		</nav>
+
+	<!-- Header End -->
+        <div class="container-xxl py-5 bg-dark page-header mb-5">
+            <div class="container my-5 pt-5 pb-4">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Candidate Registration Form</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-uppercase">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Registration form</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+	<!-- registration form -->
+	<div class="form-container">
+        <h2>Candidate Registration Form</h2>
+        <form action="#" method="POST">
+            <!-- Basic Information -->
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experienceType">Experience Type</label>
+                <select id="experienceType" name="experienceType" onchange="showFormSection(); toggleResumeInput();" required>
+                    <option value="">Select...</option>
+                    <option value="student">Student</option>
+                    <option value="fresher">Fresher</option>
+                    <option value="experienced">Experienced</option>
+                </select>
+            </div>
+
+            <!-- Student Form -->
+            <div id="studentForm" class="form-section">
+                <h3>Student Information</h3>
+                <div class="form-group">
+                    <label for="collegeName">College Name</label>
+                    <input type="text" id="collegeName" name="collegeName">
+                </div>
+
+                <div class="form-group">
+                    <label for="yearOfPassing">Year of Passing</label>
+                    <input type="text" id="yearOfPassing" name="yearOfPassing">
+                </div>
+
+                <div class="form-group">
+                    <label for="fieldOfStudy">Field of Study</label>
+                    <input type="text" id="fieldOfStudy" name="fieldOfStudy">
+                </div>
+
+                <div class="form-group">
+                    <label for="jobPreference">Looking for Job</label>
+                    <select id="jobPreference" name="jobPreference">
+                        <option value="training">Job Training</option>
+                        <option value="directJob">Direct Job</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="resumeInput" style="display:none;">
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" id="resume" name="resume">
+                </div>
+            </div>
+
+            <!-- Fresher Form -->
+            <div id="fresherForm" class="form-section">
+                <h3>Fresher Information</h3>
+                <div class="form-group">
+                    <label for="collegeNameFresher">College Name</label>
+                    <input type="text" id="collegeNameFresher" name="collegeNameFresher">
+                </div>
+
+                <div class="form-group">
+                    <label for="yearOfPassingFresher">Year of Passing</label>
+                    <input type="text" id="yearOfPassingFresher" name="yearOfPassingFresher">
+                </div>
+
+                <div class="form-group">
+                    <label for="fieldOfStudyFresher">Field of Study</label>
+                    <input type="text" id="fieldOfStudyFresher" name="fieldOfStudyFresher">
+                </div>
+
+                <div class="form-group">
+                    <label for="trainingCertificate">Upload Job Training Certificate</label>
+                    <input type="file" id="trainingCertificate" name="trainingCertificate">
+                </div>
+
+                <div class="form-group" id="resumeInput" style="display:none;">
+                    <label for="resumeFresher">Upload Resume</label>
+                    <input type="file" id="resumeFresher" name="resumeFresher">
+                </div>
+				<div class="form-group" id="resumeInput" style="display:none;">
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" id="resume" name="resume">
+                </div>
+            </div>
+
+            <!-- Experienced Form -->
+            <div id="experiencedForm" class="form-section">
+                <h3>Experienced Candidate Information</h3>
+                <div class="form-group">
+                    <label for="totalWorkingYears">Total Working Years</label>
+                    <input type="text" id="totalWorkingYears" name="totalWorkingYears">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastCompanyName">Last Company Name</label>
+                    <input type="text" id="lastCompanyName" name="lastCompanyName">
+                </div>
+
+                <div class="form-group">
+                    <label for="joiningDate">Joining Date</label>
+                    <input type="date" id="joiningDate" name="joiningDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="exitDate">Exit Date</label>
+                    <input type="date" id="exitDate" name="exitDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="currentWorking">Currently Working Here</label>
+                    <select id="currentWorking" name="currentWorking">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactDetails">Contact Details</label>
+                    <input type="text" id="contactDetails" name="contactDetails">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+                </div>
+
+                <div class="form-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" id="pincode" name="pincode">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastSalary">Last Salary</label>
+                    <input type="text" id="lastSalary" name="lastSalary">
+                </div>
+
+                <div class="form-group">
+                    <label for="grossSalary">Gross Salary</label>
+                    <input type="text" id="grossSalary" name="grossSalary">
+                </div>
+
+                <div class="form-group" id="resumeInput" style="display:none;">
+                    <label for="resumeExperienced">Upload Resume</label>
+                    <input type="file" id="resumeExperienced" name="resumeExperienced">
+                </div>
+        </div>
+		 <button type="submit">Submit</button>
+	</div>
+
+            <!-- Submit Button -->
+           
+        </form>
+    </div>
+
+
+<!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+</body>
+
+</html>
