@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Udaipur Hotelier</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+    <style>
+        
+        .Chemical_container {
+              max-width: 1000px;
+            margin: 0 auto;
+        }
+          h1 {
+            text-align: center;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button.selected {
+            background-color: #28A745;
+        }
+        .details {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .details.active {
+            display: block;
+        }
+        .details h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .details p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <h4 class="m-0 text-primary">Udaipur Hotelier</h4>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+					<a href="category.html" class="nav-item nav-link">Jobs</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+					<a href="Resume.html" class="nav-item nav-link none">Resume</a>
+					
+                </div>
+			<!--	<a href="Resume.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Resume</a>
+				&nbsp;
+                <a href="job-post.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+				&nbsp; -->
+            </div>
+
+        </nav>
+        <!-- Navbar End -->
+
+
+        <!-- Header End -->
+        <div class="container-xxl py-5 bg-dark page-header mb-5">
+            <div class="container my-5 pt-5 pb-4">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">House Keeping Chemical List</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-uppercase">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Chemical List</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Header End -->
+
+	<div class="Chemical_container">
+        <h1>Housekeeping Chemicals</h1>
+       <div class="button-container" id="buttonContainer">
+        <!-- Buttons will be dynamically generated here -->
+    </div>
+    <div class="details" id="detailsContainer">
+        <!-- Details will be dynamically displayed here -->
+    </div>
+        
+    </div>
+       
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Udaipur Hotelier</h5>
+                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="404.html">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="404.html">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="404.html">Terms & Condition</a> 
+                    </div>
+					
+					<div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Help</h5>
+                       <a class="btn btn-link text-white-50" href="clean_Checklist_emp.html">HK Checklist's </a>
+					   <a class="btn btn-link text-white-50" href="fo_Checklist_emp.html">FO Checklist's </a>
+					   <a class="btn btn-link text-white-50" href="fo_knowledge.html">Front Office Knowledge</a>
+					   <a class="btn btn-link text-white-50" href="room_Checklist_sup.html">Room Checklist</a>
+					   <a class="btn btn-link text-white-50" href="404.html">Human Resource Policy</a>
+                    </div>
+                   
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Udaipur</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91- 9079268663</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Udaipurhotelier@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Udaipur Hotelier</a>, All Right Reserved.			
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    // Data for housekeeping chemicals
+        const chemicals = {
+            R1: {
+                fullName: "R1: Bathroom Cleaner",
+                briefing: "A specialized cleaner for bathrooms.",
+                whyUse: "Removes tough stains and disinfects surfaces.",
+                howToUse: "Spray on surfaces, scrub, and rinse with water.",
+                whereToUse: "Tiles, sinks, toilets, and bathtubs.",
+                dilution: "Use undiluted for tough stains or dilute 1:10 with water.",
+                usage: "Effective against soap scum, limescale, and germs."
+            },
+            R2: {
+                fullName: "R2: Glass Cleaner",
+                briefing: "Designed for cleaning glass surfaces.",
+                whyUse: "Gives a streak-free shine to glass.",
+                howToUse: "Spray onto glass and wipe with a microfiber cloth.",
+                whereToUse: "Windows, mirrors, and glass furniture.",
+                dilution: "Ready-to-use, no dilution needed.",
+                usage: "Provides a clear, streak-free surface."
+            },
+            R3: {
+                fullName: "R3: Floor Cleaner",
+                briefing: "Effective for mopping and floor maintenance.",
+                whyUse: "Removes dirt and adds shine to floors.",
+                howToUse: "Mix with water and mop the surface.",
+                whereToUse: "Marble, tiles, and wooden floors.",
+                dilution: "Dilute 1:50 for regular cleaning.",
+                usage: "Keeps floors clean and germ-free."
+            },
+            R4: {
+                fullName:"R4: Multi-Purpose Cleaner",
+                briefing: "Cleans various surfaces effectively.",
+                why: "For versatile cleaning purposes.",
+                how: "Apply directly and wipe with a clean cloth.",
+                area: "Kitchen counters, tables, and walls.",
+                dilution: "1:15 with water.",
+                usage: "Removes grease and grime."
+            },
+			R5: {
+                fullName: "R5: Toilet Bowl Cleaner",
+                briefing: "Specially formulated for cleaning toilet bowls.",
+                why: "Removes stains and kills germs.",
+                how: "Pour around the rim and scrub with a toilet brush.",
+                area: "Toilet bowls and urinals.",
+                dilution: "Ready to use.",
+                usage: "Ensures a germ-free and clean toilet bowl."
+            },
+            R6: {
+                fullName: "R6: Degreaser",
+                briefing: "Heavy-duty cleaner for grease removal.",
+                whyUse: "Removes oil and grease effectively.",
+                howToUse: "Apply to greasy surfaces and wipe off with a cloth.",
+                whereToUse: "Kitchens, ovens, and industrial equipment.",
+                dilution: "Dilute 1:5 for stubborn grease or use undiluted.",
+                usage: "Ideal for kitchens and heavy machinery."
+            },
+            R7: {
+                fullName: "R7: Air Freshener",
+                briefing: "Keeps spaces smelling fresh.",
+                whyUse: "Eliminates odors and freshens the air.",
+                howToUse: "Spray directly into the air.",
+                whereToUse: "Rooms, bathrooms, and offices.",
+                dilution: "Ready-to-use, no dilution needed.",
+                usage: "Creates a pleasant and inviting atmosphere."
+            },
+            R8: {
+                fullName: "R8: Carpet Shampoo",
+                briefing: "Cleans and refreshes carpets.",
+                whyUse: "Removes stains and freshens carpets.",
+                howToUse: "Apply, scrub, and vacuum after drying.",
+                whereToUse: "Carpets, rugs, and upholstery.",
+                dilution: "Dilute 1:10 for best results.",
+                usage: "Cleans, brightens, and deodorizes carpets."
+            },
+            R9: {
+                fullName: "R9: Disinfectant Cleaner",
+                briefing: "Kills germs and cleans surfaces.",
+                whyUse: "Provides effective disinfection.",
+                howToUse: "Wipe on surfaces and leave to dry.",
+                whereToUse: "Hospitals, kitchens, and general surfaces.",
+                dilution: "Dilute 1:20 for general cleaning.",
+                usage: "Ensures hygiene and cleanliness."
+            }
+        };
+
+        const buttonContainer = document.getElementById('buttonContainer');
+        const detailsContainer = document.getElementById('detailsContainer');
+
+        // Generate buttons dynamically
+        Object.keys(chemicals).forEach(key => {
+            const button = document.createElement('button');
+            button.className = 'button';
+            button.textContent = key;
+            button.addEventListener('click', () => showDetails(key, button));
+            buttonContainer.appendChild(button);
+        });
+
+        // Function to show details
+        function showDetails(key, button) {
+            // Reset selected button
+            document.querySelectorAll('.button').forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+
+            // Show details
+            const chemical = chemicals[key];
+            detailsContainer.innerHTML = `
+                <h2>${chemical.fullName}</h2>
+                <p><strong>Briefing:</strong> ${chemical.briefing}</p>
+                <p><strong>Why use:</strong> ${chemical.whyUse}</p>
+                <p><strong>How to use:</strong> ${chemical.howToUse}</p>
+                <p><strong>Where to use:</strong> ${chemical.whereToUse}</p>
+                <p><strong>How to Dilute:</strong> ${chemical.dilution}</p>
+                <p><strong>Usage:</strong> ${chemical.usage}</p>
+            `;
+            detailsContainer.classList.add('active');
+        }
+</script>
+</body>
+
+</html>
