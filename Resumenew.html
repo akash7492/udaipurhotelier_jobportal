@@ -30,14 +30,14 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 	<style>
-    
-
-.resume_container {
-    max-width: 800px;
-	margin: auto;
+    .resume_container {
+     width: 50%;
+     max-width: 1200px;
+    margin: 20px auto;
     background: white;
     padding: 20px;
     border-radius: 5px;
+	 display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -59,6 +59,7 @@ input[type="text"], input[type="email"], input[type="date"], input[type="file"],
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+	style:bold;
 }
 
 button {
@@ -124,6 +125,7 @@ margin-bottom:2px;
 				&nbsp; -->
             </div>
         </nav>
+	</div>
         <!-- Navbar End -->
 		<div class="resume_container">
         <h1>Udaipurhotelier Resume Builder</h1>
@@ -133,7 +135,6 @@ margin-bottom:2px;
             <h2>Personal Information</h2>
             <input type="file" id="profileImage" accept=".jpeg, .jpg" >
             <input type="text" id="name" placeholder="Name" >
-            <input type="text" id="department" placeholder="Department">
             <input type="date" id="dob" placeholder="Date of Birth">
             <input type="email" id="email" placeholder="Email">
             <select id="gender">
@@ -142,6 +143,16 @@ margin-bottom:2px;
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
+			
+			<select id="job-profile">
+            <option value="">-- Select a JobProfile --</option>
+            <option value="human-resource">Human Resource</option>
+            <option value="accounts">Accounts</option>
+            <option value="housekeeping">Housekeeping</option>
+            <option value="food-and-beverage">Food and Beverage</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="security">Security</option>
+        </select>
             <input type="text" id="address" placeholder="Address">
             <input type="text" id="city" placeholder="City">
             <input type="text" id="pin" placeholder="Pin Code">
@@ -150,7 +161,8 @@ margin-bottom:2px;
                 <option value="married">Married</option>
                 <option value="unmarried">Unmarried</option>
             </select>
-            <input type="text" id="spouseOrFather" placeholder="Spouse/Father Name" style="display:none;">
+            <input type="text" id="spouse" placeholder="Spouse Name" style="display:none;">
+			<input type="text" id="father" placeholder="Father Name" style="display:none;">
             <button onclick="savePersonalInfo()">Save</button>
         </section>
 
@@ -169,21 +181,35 @@ margin-bottom:2px;
             <input type="text" id="departmentWork" placeholder="Department">
             <input type="date" id="joiningDate" placeholder="Joining Date">
             <input type="date" id="exitDate" placeholder="Exit Date">
-            <label><input type="checkbox" id="currentlyWorking" onchange="toggleExitDate()"> Currently Working</label>
+            <label><input type="checkbox" id="currentlyWorking" onchange="toggleExitDate()"> Currently Working </label>
             <input type="text" id="workCity" placeholder="City">
             <button onclick="saveWorkExperience()">Save</button>
         </section>
 
-        <section id="skills">
+		<section>
+		<div id="skills-container" class="skills hidden" hidden>
+            <label>Skills:</label>
+            <ul id="skills-list">
+                <!-- Skills will be displayed here dynamically -->
+            </ul>
+        </div>
+		</section>
+
+       <section id="skills">
             <h2>Skills</h2>
+			<label><b>Human Resource </b></label><br>
             <label><input type="checkbox" value="Staff Supervision" onchange="updateSkills()"> Staff Supervision</label><br>
             <label><input type="checkbox" value="Human Resource Management" onchange="updateSkills()"> Human Resource Management</label><br>
             <label><input type="checkbox" value="Communication" onchange="updateSkills()"> Communication</label><br>
             <label><input type="checkbox" value="Hiring" onchange="updateSkills()"> Hiring</label><br>
             <label><input type="checkbox" value="Requirement" onchange="updateSkills()"> Requirement</label><br>
+			<label><b>Accounts</b></label><br>
+			<label><input type="checkbox" value="Bookkeeping" onchange="updateSkills()"> Bookkeeping</label><br>
+			<label><input type="checkbox" value="Tax Filing" onchange="updateSkills()"> Tax Filing</label><br>
+			<label><input type="checkbox" value="Bookkeeping" onchange="updateSkills()"> Financial Analysis</label><br>
             <div id="selectedSkills"></div>
         </section>
-
+		<br>
         <section id="languages">
             <h2>Languages</h2>
             <label><input type="checkbox" value="Hindi" onchange="updateLanguages()"> Hindi</label><br>
@@ -287,8 +313,10 @@ margin-bottom:2px;
 	<script>
         function toggleSpouseFather() {
     const maritalStatus = document.getElementById('maritalStatus').value;
-    const spouseOrFather = document.getElementById('spouseOrFather');
-    spouseOrFather.style.display = maritalStatus === 'married' ? 'block' : 'none';
+    const spouse = document.getElementById('spouse');
+    spouse.style.display = maritalStatus === 'married' ? 'block' : 'none';
+	const father = document.getElementById('father');
+	father.style.display = maritalStatus === 'unmarried' ? 'block' : 'none';
 }
 
 function savePersonalInfo() {
@@ -371,7 +399,40 @@ function downloadResume() {
     link.click();
 }
 
+const jobProfileDropdown = document.getElementById('job-profile');
+        const skillsContainer = document.getElementById('skills-container');
+        const skillsList = document.getElementById('skills-list');
 
+        const skillsData = {
+            "human-resource": ["Recruitment", "Payroll Management", "Employee Relations"],
+            "accounts": ["Bookkeeping", "Tax Filing", "Financial Analysis"],
+            "housekeeping": ["Cleaning", "Inventory Management", "Time Management"],
+            "food-and-beverage": ["Food Preparation", "Customer Service", "Inventory Control"],
+            "maintenance": ["Equipment Repair", "Preventive Maintenance", "Safety Compliance"],
+            "security": ["Surveillance", "Access Control", "Incident Management"]
+        };
+
+        jobProfileDropdown.addEventListener('change', () => {
+            const selectedProfile = jobProfileDropdown.value;
+
+            if (selectedProfile && skillsData[selectedProfile]) {
+                // Clear previous skills
+                skillsList.innerHTML = '';
+
+                // Add new skills to the list
+                skillsData[selectedProfile].forEach(skill => {
+                    const li = document.createElement('li');
+                    li.textContent = skill;
+                    skillsList.appendChild(li);
+                });
+
+                // Show the skills container
+                skillsContainer.classList.remove('hidden');
+            } else {
+                // Hide the skills container if no profile is selected
+                skillsContainer.classList.add('hidden');
+            }
+        });
 
 
     </script>

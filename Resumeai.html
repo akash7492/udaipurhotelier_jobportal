@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Udaipur Hotelier</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .form_container {
+            width: 50%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            color: #666;
+            margin-top: -10px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .section h3 {
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-actions {
+            text-align: center;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+			
+        }
+        .form-actions button:hover {
+            background-color: #0056b3;
+        }
+        .watermark {
+            text-align: center;
+            color: #ccc;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+		button{
+		margin-bottom: 5px;
+		}
+		.skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-item {
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .skill-item span {
+            margin-left: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+        }
+		 .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .language-item {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .language-item span {
+            margin-left: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+        }
+		 .achievements-list {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .achievements-list li {
+            background-color: #f1f1f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .achievements-list li span {
+            cursor: pointer;
+            color: #d9534f;
+            font-weight: bold;
+        }
+		.interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .interest-item {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .interest-item span {
+            margin-left: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+        }
+		input[type="text"], input[type="date"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .organizations-list {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .organizations-list li {
+            background-color: #f1f1f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .organizations-list li span {
+            cursor: pointer;
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+	
+</head>
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <h4 class="m-0 text-primary">Udaipur Hotelier</h4>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link ">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+					<a href="category.html" class="nav-item nav-link">Jobs</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+					<a href="Resume.html" class="nav-item nav-link active">Resume</a>
+					
+                </div>
+			<!--	<a href="Resume.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Resume</a>
+				&nbsp;
+                <a href="job-post.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+				&nbsp; -->
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+		
+    </div>
+	<!-- Resume.ai -->
+	<div class="form_container">
+	<form id="resumeForm">
+            <!-- Section 1: Personal Details -->
+            <div class="section">
+                <h3>Personal Details</h3>
+                <div class="form-group">
+                    <label for="profileImage">Profile Image:</label>
+                    <input type="file" id="profileImage">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="middleName">Middle Name (optional):</label>
+                    <input type="text" id="middleName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status:</label>
+                    <select id="maritalStatus" required onchange="toggleFamilyFields()">
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                    </select>
+                </div>
+                <div class="form-group" id="familyField">
+                    <!-- Dynamically updated based on marital status -->
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="pincode">Pincode:</label>
+                    <input type="text" id="pincode" required>
+                </div>
+            </div>
+
+            <!-- Section 2: Education -->
+            <div class="section" id="educationSection">
+                <h3>Education</h3>
+                <div class="form-group">
+                    <label for="collegeName">College Name:</label>
+                    <input type="text" id="collegeName">
+                </div>
+                <div class="form-group">
+                    <label for="degree">Degree Name:</label>
+                    <input type="text" id="degree">
+                </div>
+                <div class="form-group">
+                    <label for="passingYear">Passing Year:</label>
+                    <input type="text" id="passingYear">
+                </div>
+                <div class="form-group">
+                    <label for="collegeAddress">College Address/City:</label>
+                    <input type="text" id="collegeAddress">
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="addEducation()">Add More</button>
+                </div>
+            </div>
+
+            <!-- Section 3: Experience -->
+            <div class="section" id="experienceSection">
+                <h3>Experience</h3>
+               <div class="form-group">
+                    <label for="companyname">Company Name:</label>
+                    <input type="text" id="companyname">
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input type="text" id="department">
+                </div>
+                <div class="form-group">
+                    <label for="joiningdate">Joining Date:</label>
+                    <input type="date" id="joiningdate">
+                </div>
+				<div class="form-group">
+                    <label for="exitedate">Exist Date:</label>
+                    <input type="date" id="exitedate">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city">
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="addExperience()">Add More</button>
+                </div>
+            </div>
+
+            <!-- Section 4: Skills -->
+            
+            <div class="form-group">
+            <label for="skillSelect">Select a Skill:</label>
+            <select id="skillSelect">
+                <option value="supervision">Staff Supervision</option>
+                <option value="hiring">Hiring and Recruitment</option>
+                <option value="Programming">Programming</option>
+                <option value="Communication">Communication</option>
+                <option value="Teamwork">Teamwork</option>
+				<input type="checkbox" onchange="handleCheckboxChange()" hidden>
+            </select>
+        </div>
+        <button onclick="addSkill()">Add Skill</button>
+		<br>
+		<br>
+        <!-- Section 4: Selected Skills display -->
+        <h6>Selected Skills:</h6>
+        <div class="skills-list" id="skillsList"></div>
+		<br>
+		
+		<!-- Section 5: Languages -->
+            <div class="form-group">
+            <label for="languageSelect">Select a Language:</label>
+            <select id="languageSelect">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+                <option value="German">German</option>
+                <option value="Mandarin">Mandarin</option>
+            </select>
+        </div>
+        <button onclick="addLanguage()">Add Language</button>
+		<br>
+		<br>
+        <!-- Languages List -->
+        <h6>Selected Languages:</h6>
+        <div class="languages-list" id="languagesList"></div>
+		<br>
+		
+
+            <!-- Section 6: Achievements -->
+            <div class="form-group">
+            <label for="achievementInput">Add an Achievement:</label>
+            <input type="text" id="achievementInput" placeholder="Enter your achievement here..." onchange="saveData(event)">
+			<br>
+			<br>
+            <button onclick="addAchievement()">Add Achievement</button>
+        </div>
+
+        <!-- Achievements List -->
+        <h6>Selected Achievements:</h6>
+        <ul class="achievements-list" id="achievementsList"></ul>
+
+            <!-- Section 7: Interests -->
+           <!-- Predefined Interests -->
+        <div class="form-group">
+            <label>Select Your Interests:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="Cooking" onchange="addPredefinedInterest(this)"> Cooking</label>
+                <label><input type="checkbox" value="Gardening" onchange="addPredefinedInterest(this)"> Gardening</label>
+                <label><input type="checkbox" value="Traveling" onchange="addPredefinedInterest(this)"> Traveling</label>
+                <label><input type="checkbox" value="Reading" onchange="addPredefinedInterest(this)"> Reading</label>
+                <label><input type="checkbox" value="Music" onchange="addPredefinedInterest(this)"> Music</label>
+            </div>
+        </div>
+
+        <!-- Custom Interest Input -->
+        <div class="form-group">
+            <label for="customInterest">Add a Custom Interest:</label>
+            <input type="text" id="customInterest" placeholder="Enter your interest here..." onchange="saveData(event)">
+			<br><br>
+            <button onclick="addCustomInterest()">Add Interest</button>
+        </div>
+
+        <!-- Selected Interests -->
+        <h3>Selected Interests:</h3>
+        <div class="interests-list" id="interestsList"></div>
+<br>
+            <!-- Section 8: Organizations -->
+            <div class="form-group">
+            <label for="orgName">Organization Name:</label>
+            <input type="text" id="orgName" placeholder="Enter organization name" onchange="saveData(event)">
+        </div>
+        <div class="form-group">
+            <label for="orgRole">Role/Position:</label>
+            <input type="text" id="orgRole" placeholder="Enter your role or position" onchange="saveData(event)">
+        </div>
+        <div class="form-group">
+            <label for="orgDuration">Duration:</label>
+            <input type="text" id="orgDuration" placeholder="e.g., Jan 2020 - Dec 2022" onchange="saveData(event)">
+        </div>
+        <button onclick="addOrganization()">Add Organization</button>
+
+        <!-- Organizations List -->
+        <h3>Selected Organizations:</h3>
+        <ul class="organizations-list" id="organizationsList"></ul>
+		<br><br>
+
+            <div class="form-actions">
+                <button onclick="downloadResume()">Download Resume</button>
+            </div>
+        </form>
+
+        <div class="watermark">Udaipur Hotelier</div>
+    </div>
+</div>
+
+<!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Udaipur Hotelier</h5>
+                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="404.html">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="404.html">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="404.html">Terms & Condition</a> 
+                    </div>
+					
+					<div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Help</h5>
+                       <a class="btn btn-link text-white-50" href="clean_Checklist_emp.html">HK Checklist's </a>
+					   <a class="btn btn-link text-white-50" href="fo_Checklist_emp.html">FO Checklist's </a>
+					   <a class="btn btn-link text-white-50" href="fo_knowledge.html">Front Office Knowledge</a>
+					   <a class="btn btn-link text-white-50" href="room_Checklist_sup.html">Room Checklist</a>
+					   <a class="btn btn-link text-white-50" href="404.html">Human Resource Policy</a>
+                    </div>
+                   
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Udaipur</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91- 9079268663</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Udaipurhotelier@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Udaipur Hotelier</a>, All Right Reserved.			
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+		
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+	<script>
+        function toggleFamilyFields() {
+            const status = document.getElementById('maritalStatus').value;
+            const familyField = document.getElementById('familyField');
+            familyField.innerHTML = '';
+
+            if (status === 'married') {
+                familyField.innerHTML = '<label for="wifeName">Wife Name:</label><input type="text" id="wifeName" required>';
+            } else {
+                familyField.innerHTML = '<label for="fatherName">Father Name:</label><input type="text" id="fatherName" required>';
+            }
+        }
+
+        function addEducation() {
+            const educationSection = document.getElementById('educationSection');
+            const newEducation = document.createElement('div');
+            newEducation.innerHTML = `
+                <div class="form-group">
+                    <label for="collegeName">College Name:</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="degree">Degree Name:</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="passingYear">Passing Year:</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="collegeAddress">College Address/City:</label>
+                    <input type="text">
+                </div>
+            `;
+            educationSection.appendChild(newEducation);
+        }
+		// Add skill to the list
+        function addSkill() {
+            const skillSelect = document.getElementById('skillSelect');
+            const selectedSkill = skillSelect.value;
+
+            // Prevent duplicate skills
+            const skillsList = document.getElementById('skillsList');
+            if ([...skillsList.children].some(item => item.textContent.includes(selectedSkill))) {
+                alert('Skill already added!');
+                return;
+            }
+
+            // Create a skill item
+            const skillItem = document.createElement('div');
+            skillItem.className = 'skill-item';
+            skillItem.innerHTML = `
+                ${selectedSkill}
+                <span onclick="removeSkill(this)">×</span>
+            `;
+
+            // Add skill to the list
+            skillsList.appendChild(skillItem);
+        }
+
+        // Remove skill from the list
+        function removeSkill(element) {
+            element.parentElement.remove();
+        }
+		        // Add selected language to the list
+        function addLanguage() {
+            const languageSelect = document.getElementById('languageSelect');
+            const selectedLanguage = languageSelect.value;
+
+            // Prevent duplicate languages
+            const languagesList = document.getElementById('languagesList');
+            if ([...languagesList.children].some(item => item.textContent.includes(selectedLanguage))) {
+                alert('Language already added!');
+                return;
+            }
+
+            // Create a language item
+            const languageItem = document.createElement('div');
+            languageItem.className = 'language-item';
+            languageItem.innerHTML = `
+                ${selectedLanguage}
+                <span onclick="removeLanguage(this)">×</span>
+            `;
+
+            // Add the language item to the list
+            languagesList.appendChild(languageItem);
+        }
+
+        // Remove a language from the list
+        function removeLanguage(element) {
+            element.parentElement.remove();
+        }
+		// Add an achievement to the list
+        function addAchievement() {
+            const achievementInput = document.getElementById('achievementInput');
+            const achievementText = achievementInput.value.trim();
+
+            if (achievementText === '') {
+                alert('Please enter an achievement!');
+                return;
+            }
+
+            // Create a new list item for the achievement
+            const achievementItem = document.createElement('li');
+            achievementItem.innerHTML = `
+                ${achievementText}
+                <span onclick="removeAchievement(this)">×</span>
+            `;
+
+            // Add the new achievement to the list
+            const achievementsList = document.getElementById('achievementsList');
+            achievementsList.appendChild(achievementItem);
+
+            // Clear the input field
+            achievementInput.value = '';
+        }
+
+        // Remove an achievement from the list
+        function removeAchievement(element) {
+            element.parentElement.remove();
+        }
+		 // Add predefined interest
+        function addPredefinedInterest(checkbox) {
+            const interestsList = document.getElementById('interestsList');
+            const interestValue = checkbox.value;
+
+            if (checkbox.checked) {
+                // Check if interest already exists
+                if ([...interestsList.children].some(item => item.textContent.includes(interestValue))) {
+                    alert('Interest already added!');
+                    checkbox.checked = false;
+                    return;
+                }
+
+                // Create a new interest item
+                const interestItem = document.createElement('div');
+                interestItem.className = 'interest-item';
+                interestItem.innerHTML = `
+                    ${interestValue}
+                    <span onclick="removeInterest(this)">×</span>
+                `;
+                interestsList.appendChild(interestItem);
+            } else {
+                // Remove the interest if unchecked
+                [...interestsList.children].forEach(item => {
+                    if (item.textContent.includes(interestValue)) {
+                        item.remove();
+                    }
+                });
+            }
+        }
+
+        // Add custom interest
+        function addCustomInterest() {
+            const customInterestInput = document.getElementById('customInterest');
+            const customInterest = customInterestInput.value.trim();
+
+            if (customInterest === '') {
+                alert('Please enter an interest!');
+                return;
+            }
+
+            const interestsList = document.getElementById('interestsList');
+
+            // Check if interest already exists
+            if ([...interestsList.children].some(item => item.textContent.includes(customInterest))) {
+                alert('Interest already added!');
+                return;
+            }
+
+            // Create a new interest item
+            const interestItem = document.createElement('div');
+            interestItem.className = 'interest-item';
+            interestItem.innerHTML = `
+                ${customInterest}
+                <span onclick="removeInterest(this)">×</span>
+            `;
+            interestsList.appendChild(interestItem);
+
+            // Clear input field
+            customInterestInput.value = '';
+        }
+
+        // Remove an interest
+        function removeInterest(element) {
+            element.parentElement.remove();
+        }
+		 // Add organization to the list
+        function addOrganization() {
+            const orgName = document.getElementById('orgName').value.trim();
+            const orgRole = document.getElementById('orgRole').value.trim();
+            const orgDuration = document.getElementById('orgDuration').value.trim();
+
+            if (!orgName || !orgRole || !orgDuration) {
+                alert('Please fill in all fields!');
+                return;
+            }
+
+            // Create a new list item for the organization
+            const orgItem = document.createElement('li');
+            orgItem.innerHTML = `
+                <div>
+                    <strong>${orgName}</strong> - ${orgRole} (${orgDuration})
+                </div>
+                <span onclick="removeOrganization(this)">×</span>
+            `;
+
+            // Append the new organization to the list
+            document.getElementById('organizationsList').appendChild(orgItem);
+
+            // Clear the input fields
+            document.getElementById('orgName').value = '';
+            document.getElementById('orgRole').value = '';
+            document.getElementById('orgDuration').value = '';
+        }
+
+        // Remove organization from the list
+        function removeOrganization(element) {
+            element.parentElement.remove();
+        }
+		
+		
+		function downloadResume() {
+    // Collect data from form_container
+    const formContainer = document.getElementById('form_container');
+    const inputs = formContainer.querySelectorAll('input, select, textarea');
+    let resumeData = '';
+
+    // Loop through inputs and gather data
+    inputs.forEach(input => {
+        const label = input.placeholder || input.previousElementSibling?.innerText || input.id;
+        const value = input.type === 'checkbox' ? (input.checked ? 'Yes' : 'No') : input.value;
+
+        if (value.trim() !== '') {
+            resumeData += `${label}: ${value}\n`;
+        }
+    });
+
+    // Format data for PDF
+    const formattedResume = `
+        <h1>Resume</h1>
+        ${resumeData.replace(/\n/g, '<br>')}
+    `;
+
+    // Generate PDF using jsPDF
+    const doc = new jsPDF();
+    doc.html(formattedResume, {
+        callback: function (doc) {
+            doc.save('Resume.pdf');
+        },
+        x: 10,
+        y: 10
+    });
+}
+function saveCheckboxData() {
+    let checkbox = document.getElementById("checkbox1");
+    if (checkbox.checked) {
+      localStorage.setItem("checkbox1", "selected");
+    } else {
+      localStorage.removeItem("checkbox1");
+    }
+  }
+
+  window.onload = function() {
+    if (localStorage.getItem("checkbox1")) {
+      document.getElementById("checkbox1").checked = true;
+    }
+  }
+  function updateFormData() {
+    let data = document.getElementById("checkbox1").checked ? "Selected" : "Not Selected";
+    document.getElementById("result").innerText = data;
+  }
+  let scrollPosition = 0;
+
+  window.onscroll = function() {
+    scrollPosition = window.scrollY;
+  };
+
+  function handleCheckboxChange() {
+    // Handle the checkbox state change
+
+    // Restore the scroll position after interaction
+    window.scrollTo(0, scrollPosition);
+  }
+  
+  
+    </script>
+</body>
+
+</html>
