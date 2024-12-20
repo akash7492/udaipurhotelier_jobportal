@@ -206,13 +206,24 @@
                 <label><input type="checkbox" name="cleaning1" onclick="confParagraph(1)"> Conference Template 1</label>
                 <label><input type="checkbox" name="cleaning1" onclick="confParagraph(2)"> Conference Template 2</label>
                 </div>
-		<div id="paragraphs">
-			<p id="confpara-1" class="paragraph">Dear GUEST FIRST NAME,<br>Thank you so much for choosing HOTEL NAME <br>as your venue! We look forward to providing a <br>stress-free day for you and your attendees and <br>ensuring everything runs smoothly. Please let <br>me know if there is anything at all I can do for <br>you throughout the day. <br>Best,<br>YOUR NAME</p>
-			<p id="confpara-2" class="paragraph">Thank you for hosting the CONFERENCE <br>NAME at HOTEL NAME! We appreciate you <br>choosing us for this experience and will <br>make sure everything runs smoothly. Is there <br>anything we can do for you right away? <br>-USER FIRST NAME</p>
+				<div id="paragraphs">
+				<p id="confpara-1" class="paragraph">Dear GUEST FIRST NAME,<br>Thank you so much for choosing HOTEL NAME <br>as your venue! We look forward to providing a <br>stress-free day for you and your attendees and <br>ensuring everything runs smoothly. Please let <br>me know if there is anything at all I can do for <br>you throughout the day. <br>Best,<br>YOUR NAME</p>
+				<p id="confpara-2" class="paragraph">Thank you for hosting the CONFERENCE <br>NAME at HOTEL NAME! We appreciate you <br>choosing us for this experience and will <br>make sure everything runs smoothly. Is there <br>anything we can do for you right away? <br>-USER FIRST NAME</p>
+				</div>
 		</div>
-		</div>
-					
-
+			<div class="section">
+            <h6>EXCEL TEMPLATES</h6>
+				<div class="checkbox-group">
+				<label><input type="checkbox" name="cleaning1" onclick="excelParagraph(1)"> COURIER REGISTER</label>							
+				<label><input type="checkbox" name="cleaning1" onclick="excelParagraph(2)"> DESK MESSAGE REGISTER</label>
+				<label><input type="checkbox" name="cleaning1" onclick="excelParagraph(3)"> Email REGISTER</label>
+				</div>
+				<div id="paragraphs">
+				<p id="excelpara-1" class="paragraph">You Can Download this Courier Register Format By clicking on Download button <br><a href="file/Courier.xlsx" download="excel"><button type="button">Download</button></p>
+				<p id="excelpara-2" class="paragraph">You Can Download this Desk Message Format By clicking on Download button <br><a href="file/deskmessge.xlsx" download="excel"><button type="button">Download</button></p>
+				<p id="excelpara-3" class="paragraph">You Can Download this Email register Format By clicking on Download button <br><<a href="404.html" download="excel"><button type="button">Download</button></p>
+				</div>
+			</div>
 	</form>
 	
 	<!-- form end -->
@@ -320,6 +331,17 @@
 	// Conference message
 	function confParagraph(index) {
       const paragraph = document.getElementById(`confpara-${index}`);
+      const checkbox = event.target;
+
+      if (checkbox.checked) {
+        paragraph.style.display = 'block';
+      } else {
+        paragraph.style.display = 'none';
+      }
+    }
+	// Conference message
+	function excelParagraph(index) {
+      const paragraph = document.getElementById(`excelpara-${index}`);
       const checkbox = event.target;
 
       if (checkbox.checked) {
