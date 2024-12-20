@@ -169,18 +169,56 @@
 			<p id="welpara-4" class="paragraph"> Guest messaging:- You can send welcome messages to guests via text message (e.g., SMS, WhatsApp etc.), which is a convenient way to communicate important information quickly and easily. </p>
 			<p id="welpara-5" class="paragraph"> Hotel app:- You can send guests a welcome message through your hotel app if guests are signed up prior to their stay. This way you can send out push notifications or utilize chatbots or in-app messaging.</p>
 			</div>
+		
+			<!-- welcome Message format -->
+		<div class="section">
+            <h6>WELCOME TEMPLATES</h6>
+				<div class="checkbox-group">
+                <label><input type="checkbox" name="cleaning1" onclick="weltempParagraph(1)"> Welcome Note 1</label>
+                <label><input type="checkbox" name="cleaning1" onclick="weltempParagraph(2)"> Welcome Note 2</label>
+                <label><input type="checkbox" name="cleaning1" onclick="weltempParagraph(3)"> Welcome Note 3</label>
+                <label><input type="checkbox" name="cleaning1" onclick="weltempParagraph(4)"> Welcome Note 4</label>
+                
+			</div>
+			<div id="paragraphs">
+			<p id="weltepara-1" class="paragraph">Dear MR/MRS/TITLE GUEST LAST NAME, <br> Welcome to HOTEL NAME! <br> We are delighted to have you as our guest and look forward to providing you an <br> unforgettable stay. Please let me or anyone on the staff know if there is anything .<br>we can do for you throughout your time with us.<br>Best,<br>YOUR NAME</p>
+			<p id="weltepara-2" class="paragraph">Dear MR/MRS/TITLE GUEST LAST NAME, <br>We are delighted to have you with us at the HOTEL NAME. Thank you for choosing us<br>as your home away from home! If there is anything you need at all during your stay,<br>please do not hesitate to reach out.<br>Best,<br>YOUR NAME</p>
+			<p id="weltepara-3" class="paragraph">Hi GUEST FIRST NAME,<br>Welcome to the HOTEL NAME! We are so<br>excited to welcome you to CITY and hope you<br>enjoy your time here. Let us know if there is<br>anything we can get for you!<br>Best,<br>YOUR NAME</p>
+			<p id="weltepara-4" class="paragraph">Hi GUEST FIRST NAME!<br>Welcome to the HOTEL NAME! We are so<br>grateful that you have chosen to stay with<br>us during your time in CITY and look<br>forward to making this a memorable stay.<br>Please let us know if there is anything we<br>can do to ensure a wonderful experience!<br>Best,<br>YOUR NAME</p>
+			<p id="weltepara-5" class="paragraph"></p>
+			</div>
 		</div>
+		<div class="section">
+            <h6>Wedding TEMPLATES</h6>
+				<div class="checkbox-group">
+                <label><input type="checkbox" name="cleaning1" onclick="WeddingParagraph(1)"> Wedding Note 1</label>
+                <label><input type="checkbox" name="cleaning1" onclick="WeddingParagraph(2)"> Wedding Note 2</label>
+                </div>
+		<div id="paragraphs">
+			<p id="wedpara-1" class="paragraph">Dear TITLE & TITLE COUPLES LAST NAME,<br>We are honored you have chosen HOTEL NAME for your special day! We are <br>here to ensure everything is right for you and your guests. Please reach out <br>to me with any questions or requests through your time with us. We are on <br>standby to assist!<br>Congratulations on this wonderful milestone</p>
+			<p id="wedpara-2" class="paragraph">Thank you so much for choosing HOTEL NAME for this special experience!<br>We are available for anything you may need and are honored to have you<br>and your guests here. Is there anything we can help you with right away?</p>
+		</div>
+		</div>
+		
+		<div class="section">
+            <h6>Conference - TEMPLATES</h6>
+				<div class="checkbox-group">
+                <label><input type="checkbox" name="cleaning1" onclick="confParagraph(1)"> Conference Template 1</label>
+                <label><input type="checkbox" name="cleaning1" onclick="confParagraph(2)"> Conference Template 2</label>
+                </div>
+		<div id="paragraphs">
+			<p id="confpara-1" class="paragraph">Dear GUEST FIRST NAME,<br>Thank you so much for choosing HOTEL NAME <br>as your venue! We look forward to providing a <br>stress-free day for you and your attendees and <br>ensuring everything runs smoothly. Please let <br>me know if there is anything at all I can do for <br>you throughout the day. <br>Best,<br>YOUR NAME</p>
+			<p id="confpara-2" class="paragraph">Thank you for hosting the CONFERENCE <br>NAME at HOTEL NAME! We appreciate you <br>choosing us for this experience and will <br>make sure everything runs smoothly. Is there <br>anything we can do for you right away? <br>-USER FIRST NAME</p>
+		</div>
+		</div>
+					
+
 	</form>
 	
 	<!-- form end -->
 
 </div>
-
-				
-       
-
-
-       <!-- Footer Start -->
+		<!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -229,9 +267,7 @@
             </div>
         </div>
         <!-- Footer End -->
-
-
-        <!-- Back to Top -->
+		<!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
@@ -262,6 +298,28 @@
 	// welcome message
 	function welParagraph(index) {
       const paragraph = document.getElementById(`welpara-${index}`);
+      const checkbox = event.target;
+
+      if (checkbox.checked) {
+        paragraph.style.display = 'block';
+      } else {
+        paragraph.style.display = 'none';
+      }
+    }
+	// welcome message
+	function weltempParagraph(index) {
+      const paragraph = document.getElementById(`weltepara-${index}`);
+      const checkbox = event.target;
+
+      if (checkbox.checked) {
+        paragraph.style.display = 'block';
+      } else {
+        paragraph.style.display = 'none';
+      }
+    }
+	// Conference message
+	function confParagraph(index) {
+      const paragraph = document.getElementById(`confpara-${index}`);
       const checkbox = event.target;
 
       if (checkbox.checked) {
