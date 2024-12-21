@@ -135,7 +135,7 @@ margin-bottom:2px;
             <h2>Personal Information</h2>
             <input type="file" id="profileImage" accept=".jpeg, .jpg" >
             <input type="text" id="name" placeholder="Name" >
-            <input type="date" id="dob" placeholder="Date of Birth">
+            <b>Date of Birth</b><input type="date" id="dob" placeholder="Date of Birth">
             <input type="email" id="email" placeholder="Email">
             <select id="gender">
                 <option value="">Select Gender</option>
@@ -179,8 +179,8 @@ margin-bottom:2px;
             <h2>Work Experience</h2>
             <input type="text" id="companyName" placeholder="Company Name">
             <input type="text" id="departmentWork" placeholder="Department">
-            <input type="date" id="joiningDate" placeholder="Joining Date">
-            <input type="date" id="exitDate" placeholder="Exit Date">
+            Joining Date <input type="date" id="joiningDate" placeholder="Joining Date">
+            Exit Date<input type="date" id="exitDate" placeholder="Exit Date">
             <label><input type="checkbox" id="currentlyWorking" onchange="toggleExitDate()"> Currently Working </label>
             <input type="text" id="workCity" placeholder="City">
             <button onclick="saveWorkExperience()">Save</button>
