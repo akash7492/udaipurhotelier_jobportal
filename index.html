@@ -837,6 +837,10 @@ const firebaseConfig = {
 };
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
+	
+
+</script>
+<script>
 async function trackUser() {
     // Capture device details
     const deviceInfo = navigator.userAgent;
@@ -868,10 +872,12 @@ function updateUserCount() {
     });
 }
 updateUserCount();
+</script>
 
-// both are different style of online user
-// top is new bottom one is old
-// Key for localStorage
+
+<!--	<script>
+	
+	// Key for localStorage
 const STORAGE_KEY = 'user_online';
 
 // Generate a unique ID for each visitor
@@ -920,7 +926,7 @@ function refreshUser() {
 // Initialize the counter and refresh mechanism
 refreshUser();
 updateCount();
-</script>
+</script> -->
 </body>
 
 </html>
