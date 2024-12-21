@@ -1,48 +1,49 @@
-// Import and configure Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyAmkbzs2m4Odi-792Iy8RwXP940HSKGunA",
-  authDomain: "udaipur-hotelier.firebaseapp.com",
-  databaseURL: "https://udaipur-hotelier-default-rtdb.firebaseio.com",
-  projectId: "udaipur-hotelier",
-  storageBucket: "udaipur-hotelier.firebasestorage.app",
-  messagingSenderId: "931551837204",
-  appId: "1:931551837204:web:668a9b545a6f523ecefb01"
-};
-firebase.initializeApp(firebaseConfig);
+// Key for localStorage
+const STORAGE_KEY = 'user_online';
 
-const database = firebase.database();
+// Generate a unique ID for each visitor
+const uniqueID = Date.now() + Math.random().toString(36).substring(2);
 
-// Get device details
-function getDeviceDetails() {
-  return {
-    userAgent: navigator.userAgent,
-    platform: navigator.platform,
-    time: new Date().toISOString(),
-  };
-}
+// Add the user to localStorage with an expiry time (e.g., 30 seconds)
+function addUser() {
+  const users = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  const now = Date.now();
+  const updatedUsers = users.filter(user => user.expiry > now); // Filter out expired users
 
-// Track active users
-function trackActiveUser() {
-  const userRef = database.ref("activeUsers");
-  const sessionId = `${Math.random().toString(36).substring(2)}-${Date.now()}`;
-
-  const userData = {
-    sessionId: sessionId,
-    ...getDeviceDetails(),
-  };
-
-  const userEntryRef = userRef.child(sessionId);
-  userEntryRef.set(userData);
-
-  // Remove on disconnect
-  userEntryRef.onDisconnect().remove();
-
-  // Update online user count
-  userRef.on("value", (snapshot) => {
-    const userCount = snapshot.numChildren();
-    document.getElementById("user-count").textContent = `${userCount} user${userCount > 1 ? "s" : ""} online`;
+  // Add the current user
+  updatedUsers.push({
+    id: uniqueID,
+    expiry: now + 30000 // User is active for 30 seconds
   });
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedUsers));
+  return updatedUsers;
 }
 
-// Initialize
-trackActiveUser();
+// Count online users
+function countUsers() {
+  const now = Date.now();
+  const users = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  const updatedUsers = users.filter(user => user.expiry > now); // Filter out expired users
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedUsers));
+  return updatedUsers.length;
+}
+
+// Update the count every second
+function updateCount() {
+  const userCountElement = document.getElementById('userCount');
+  userCountElement.textContent = countUsers();
+}
+
+// Keep refreshing the user's presence every 15 seconds
+function refreshUser() {
+  addUser();
+  setInterval(() => {
+    addUser();
+    updateCount();
+  }, 15000);
+}
+
+// Initialize the counter and refresh mechanism
+refreshUser();
+updateCount();
